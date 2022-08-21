@@ -12,6 +12,7 @@ This repository is an aggregator of Hacker Rank challenge resolutions. Each subd
 See below a list with all solved challenges:
 
 - [Left rotation](./left-rotation/)
+- [Bill division](./bill-division/)
 
 ## Programming language choice
 
