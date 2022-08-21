@@ -1,4 +1,5 @@
 require "test/unit"
+require_relative "./validate-bill-division.rb"
 
 class ValidateBillDivisionTest < Test::Unit::TestCase
   def test_returns_bon_appetit_if_bill_is_correctly_split
