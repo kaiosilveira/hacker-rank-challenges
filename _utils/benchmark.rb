@@ -8,12 +8,12 @@ module BenchmarkUtils
     end
   end
 
-  def self.benchmarking_n_times(fn = method(:method_name), n0: 0, n_max: 5, &block)
+  def self.benchmarking_n_times(fn = method(:method_name), n0: 0, n_max: 5, step: 1, &block)
     n_axis = []
     time_axis = []
 
     Benchmark.benchmark do |x|
-      n0.upto(n_max) do |n|
+      n0.step(n_max, step) do |n|
         time = x.report("n = #{n}") { fn.call(n) }
         n_axis << n
         time_axis << time.real
