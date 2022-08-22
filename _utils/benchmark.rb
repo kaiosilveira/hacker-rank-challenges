@@ -1,3 +1,6 @@
+require 'benchmark'
+require_relative './chart.rb'
+
 module BenchmarkUtils
   def self.write_benchmark_results_to_csv(filename:, x_label:, y_label:, data:)
     File.open(filename, 'w+') do |f|
