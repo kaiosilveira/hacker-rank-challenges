@@ -13,6 +13,7 @@ See below a list with all solved challenges:
 
 - [Left rotation](./left-rotation/)
 - [Bill division](./bill-division/)
+- [Divisible sum pairs](./divisible-sum-pairs/)
 
 ## Programming language choice
 
