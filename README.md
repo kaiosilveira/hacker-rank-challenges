@@ -1,3 +1,5 @@
+[![Continuous Integration](https://github.com/kaiosilveira/hacker-rank-challenges/actions/workflows/ruby.yml/badge.svg)](https://github.com/kaiosilveira/hacker-rank-challenges/actions/workflows/ruby.yml)
+
 # hacker-rank-challenges
 
 This repository is an aggregator of Hacker Rank challenge resolutions. Each subdirectory that doesn't start with an underscore is a different challenge from Hacker Rank. Inside each of them you'll find a similar structure, with:
@@ -20,9 +22,44 @@ See below a list with all solved challenges:
 
 Because of its simplicity, elegance and API completeness, Ruby was the chosen programming language to implement the code for the challenges.
 
-## Test framework
+## Testing & Continuous integration
 
+**Unit testing**
 The built-in `test/unit` test framework was used to implement the test suites, as no external dependency will be needed.
+
+**Continuous integration**
+A simple CI pipeline was put in place to execute the tests for each directory inside this repo. It basically sets up Ruby and runs the tests. This happens for every push to `main`. The config is:
+
+```yml
+name: Continuous Integration
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ["2.6"]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler: "Gemfile.lock"
+          bundler-cache: true
+      - name: Lock bundle
+        run: bundle lock --add-platform x86_64-linux
+
+      - name: Run tests
+        run: bundle exec rake
+```
+
+See [ruby.yml](./.github/workflows/ruby.yml) for the actual file.
 
 ## Benchmarking
 
@@ -80,4 +117,4 @@ For each challenge, a chart was created to allow us to visually identify the tim
 
 ```
 
-In this case, we can clearly see a linear time complexity pattern ($O(n)$).
+In this case, we can clearly see a linear time complexity pattern ( $O(n)$ ).
