@@ -22,4 +22,33 @@ module BenchmarkUtils
 
     yield [n_axis, time_axis]
   end
+
+  def self.create_time_complexity_analysis(
+    method_name:,
+    n_max:,
+    file_name:,
+    n_incrementation_step: 1,
+    space_between_chart_items: 1
+  )
+    BenchmarkUtils.benchmarking_n_times(
+      method(method_name),
+      n0: 0,
+      n_max: n_max,
+      step: n_incrementation_step
+    ) do |n_values, time_results|
+      results = ChartUtils.prepare_chart_data_with(
+        x_axis: n_values,
+        y_axis: time_results,
+        max_x_size: time_results.size,
+        step: space_between_chart_items
+      )
+
+      BenchmarkUtils.write_benchmark_results_to_csv(
+        filename: file_name,
+        x_label: 'n',
+        y_label: 'T(n)',
+        data: results
+      )
+    end
+  end
 end
