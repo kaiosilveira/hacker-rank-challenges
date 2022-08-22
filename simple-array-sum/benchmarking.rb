@@ -1,3 +1,4 @@
+require_relative './simple-array-sum.rb'
 require_relative '../_utils/benchmark.rb'
 require_relative '../_utils/array/array.rb'
 
