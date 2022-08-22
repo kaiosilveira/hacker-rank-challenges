@@ -15,6 +15,37 @@ The test suite for this challenge contains two tests:
 - one for when the array is empty, which expects zero as a result
 - oen for then the array contains valid integer elements, which expects the correct sum≥
 
+## Samples
+
+The two samples provided by Hacker Rank are:
+
+- expected result: 6, arr: [1, 2, 3]
+- expected result: 31, arr: [1, 2, 3, 4, 10, 11]
+
+For an extra sanity check, we can run these samples against our function using our `HackerRank::Runner` class:
+
+```ruby
+samples = [
+  HackerRank.create_sample(expected_result: 6, params: [[1, 2, 3]]),
+  HackerRank.create_sample(expected_result: 31, params: [[1, 2, 3, 4, 10, 11]]),
+]
+
+HackerRank::Runner.new(samples).run do |params|
+  simple_array_sum(params)
+end
+```
+
+Which prints the following results:
+
+```console
+Running sample #1
+Success! ✅
+Running sample #2
+Success! ✅
+```
+
+So, everything looks fine!
+
 ## Algorithm resolution description
 
 The solution for this challenge is as simple as calling the built-in method `.sum` on the input array:
