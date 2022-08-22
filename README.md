@@ -17,6 +17,7 @@ See below a list with all solved challenges:
 - [Bill division](./bill-division/)
 - [Divisible sum pairs](./divisible-sum-pairs/)
 - [Simple array sum](./simple-array-sum/)
+- [Sub array division](./sub-array-division/)
 
 ## Programming language choice
 
