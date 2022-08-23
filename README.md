@@ -119,4 +119,4 @@ For each challenge, a chart was created to allow us to visually identify the tim
 
 ```
 
-In this case, we can clearly see a linear time complexity pattern ( $O(n)$ ).
+In this case, we can clearly see a linear time complexity pattern `O(n)`.

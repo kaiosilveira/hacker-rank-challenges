@@ -1,6 +1,6 @@
 # hacker-rank-left-rotation
 
-A left rotation operation on an array of size **_n_** shifts each of the array's elements **_1_** unit to the left. Given an integer, **_d_**, rotate the array that many steps left and return the result.
+A left rotation operation on an array of size `n` shifts each of the array's elements `1` unit to the left. Given an integer, `d`, rotate the array that many steps left and return the result.
 
 **Constraints**
 
@@ -39,11 +39,18 @@ The problem with the code above, though, is that it will throw an `RangeError` w
 
 To calculate the computational time complexity for this implementation we can decompose the code parts, analyze them separately and then sum the results.
 
-- `(0..arr.size - 1)` is `O(1)`, i.e., has a constant time complexity, as it's just creating a range from 0 up to the
-  number of elements inside `arr`;
-- `.map { |n| arr[(n + d) % arr.size] }` is `n x O(1)`, as the code inside the `.map` function will run one time for each `n`.
+- `(0..arr.size - 1)` is $O(1)$, i.e., has a constant time complexity, as it's just creating a range from 0 up to the number of elements inside `arr`;
+- `.map { |n| arr[(n + d) % arr.size] }` is $n.O(1)$, as the code inside the `.map` function will run one time for each $n$.
 
-So, the resulting expression for the time complexity in relation to `n` is `T = O(1) + n x O(1)`. Getting rid of the constants and coefficients we have `T = O(n)`.
+So, the resulting expression for the time complexity in relation to `n`:
+
+- $T = O(1) + n x O(1)$
+
+Getting rid of the constants and coefficients we have that:
+
+- $T = O(n)$
+
+i.e., the implementation has Linear time complexity.
 
 **Benchmarking**
 

@@ -24,7 +24,7 @@ And the five pairs that match the requirements for this array are:
 - $(2, 4) \to arr[2] + arr[4] = 2 + 1 = 3$
 - $(4, 5) \to arr[4] + arr[5] = 1 + 2 = 3$
 
-For technical details, see [get-divisible-sum-pairs.spec.rb](./get-divisible-sum-pairs.spec.rb).
+For implementation details, see [get-divisible-sum-pairs.spec.rb](./get-divisible-sum-pairs.spec.rb).
 
 ## Algorithm resolution description
 
@@ -96,17 +96,19 @@ And we are done! The final structure looks like:
   end
 ```
 
-THe T expression for this code can be written as:
+The `T` expression for this code can be written as:
 
-$T = O(1) + n.(m.O(1)) + O(1) \implies T = n.m.O(1) + 2.O(1)$
+- $T = O(1) + n.(m.O(1)) + O(1) \implies T = n.m.O(1) + 2.O(1)$
 
-Considering that we will be running the outer loop $n$ times, with $n$ being `arr.size - 1` and the same will happen for the inner loop, with it being run $m$ times, with $m$ also being `arr.size - 1`, we can say that $m = n = arr.size - 1$ and we can rewrite `T` as:
-$T = n^{2}.O(1) + 2.O(1)$
+Considering that we will be running the outer loop `n` times, with `n` being `arr.size - 1` and the same will happen for the inner loop, with it being run `m` times, with `m` also being `arr.size - 1`, we can say that `m = n = arr.size - 1` and we can rewrite `T` as:
 
-Now, considering $O(1)$ is constant, `T` is equivalent to:
-$T = c_{1}.n^{2} + c_{2}$
+- $T = n^{2}.O(1) + 2.O(1)$
 
-And finally, getting rid of the constants, we have that `T` is in the order of $n^{2}$, so we can say that this function has exponential time complexity $O(n^{2})$.
+Now, considering `O(1)` is constant, `T` is equivalent to:
+
+- $T = c_{1}.n^{2} + c_{2}$
+
+And finally, getting rid of the constants, we have that `T` is in the order of `n^{2}`, so we can say that this function has exponential time complexity `O(n^{2})`.
 
 **Benchmarking**
 
@@ -135,3 +137,5 @@ To visually see what the code analysis stated above, a benchmarking with a maxim
            0                                              20000
                                     n
 ```
+
+For the implementation details, see [benchmarking.rb](./benchmarking.rb).

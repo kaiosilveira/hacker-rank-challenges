@@ -58,11 +58,23 @@ The solution for this challenge is as simple as calling the built-in method `.su
 
 ## Implementation benchmarking & time complexity analysis
 
-As simple as this function may look, analyzing the time complexity here may be tricky, as we need to understand how the `sum` method behaves. [From Ruby's official API reference for Array#sum](https://apidock.com/ruby/Array/sum), we can see that the implementation uses a `for` loop to perform the aggregation of the results on a variable. Which will roughly means a $T = n.O(1)$ time complexity, therefore implying a $O(n)$ complexity. See the next section for a visual confirmation of this idea.
+As simple as this function may look, analyzing the time complexity here may be tricky, as we need to understand how the `sum` method behaves. [From Ruby's official API reference for Array#sum](https://apidock.com/ruby/Array/sum), we can see that the implementation uses a `for` loop to perform the aggregation of the results on a variable. Which will roughly mean
+
+- $T = n.O(1)$
+
+As it will perform a `+` operation for each item inside the array. Then, considering that `O(1)` is a constant coefficient here, we can rewrite this expression as
+
+- $T \propto n$
+
+therefore implying Linear complexity
+
+- $T = O(n)$
+
+Now, see the next section for a visual confirmation of this idea.
 
 **Benchmarking**
 
-The benchmarking results for this operation reinforces the linear relationship $O(n)$ between $n$ and $T(n)$, i.e., the size of the array and the time it takes to the operation to be performed.
+The benchmarking results for this operation reinforces the linear relationship `O(n)` between `n` and `T(n)`, i.e., the size of the array and the time it takes to the operation to be performed.
 
 To gather the results, the `simple_array_sum` function was ran 10 thousand times, with n increasing in a step of 1000 at a time, e.g., 0 items to 10000 items. Below are the timings of the execution:
 

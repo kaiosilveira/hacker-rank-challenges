@@ -93,15 +93,15 @@ Calculating the time complexity for this implementation is pretty straightforwar
 
 Then, the resulting expression for `T` is:
 
-$T = O(1) + n x O(1) + O(1) + O(1) + O(1) + O(1) + O(1)$
+- $T = O(1) + n.O(1) + O(1) + O(1) + O(1) + O(1) + O(1)$
 
 which we can express as:
 
-$T = c_{1} + n.O(1) + c_{2} + c_{3} + c_{4} + c_{5} + c_{6}$
+- $T = c_{1} + n.O(1) + c_{2} + c_{3} + c_{4} + c_{5} + c_{6}$
 
 Getting rid of the constants, we're left with:
 
-$T = n.O(1)$
+- $T = n.O(1)$
 
 Then, considering that `O(1)` is the coefficient here, as `n` may vary as well, we have deduced that `T` is in the order of `n`, and thus the function has a `O(n)` complexity.
 
@@ -147,3 +147,5 @@ The following results were obtained after executing the function 10000 times, wi
 ```
 
 The chart strongly suggests a linear time complexity `O(n)` for the function, as the code analysis had suggested previously.
+
+For further implementation details, see [benchmarking.rb](./benchmarking.rb).

@@ -114,19 +114,25 @@ Below, the code analysis for the implementation, adding a comment on each line t
   end.size
 ```
 
-Note: It can be a surprise, but `slice.sum` is actually $O(1)$ here, as the `slice` size will depend on the `birth_month` variable, not on the size of the `chocolate` array.
+Note: It can be a surprise, but `slice.sum` is actually `O(1)` here, as the `slice` size will depend on the `birth_month` variable, not on the size of the `chocolate` array.
 
-With this analysis, we can write $T$ as:
-$T = n.O(1) + O(1)$
+With this analysis, we can write `T` as:
+
+- $T = n.O(1) + O(1)$
 
 Which, removing the constants, is:
-$T = n.O(1)$
 
-And as $O(1)$ is a constant coefficient multiplying $n$ here, we can say that $T = O(n)$.
+- $T = n.O(1)$
+
+And as `O(1)` is a constant coefficient multiplying `n` here, we can say that
+
+- $T = O(n)$
+
+i.e., the implementation has a Linear time complexity.
 
 **Benchmarking**
 
-To benchmark this solution we varied $n$ from `n = 0` up to `n = 100_000`, with a step size of `1000` items increase for each run. The values for `birth_day` and `birth_month` were kept constant, as they do not impact the time complexity of the function. The chart results are shown below:
+To benchmark this solution we varied `n` from `n = 0` up to `n = 100_000`, with a step size of `1000` items increase for each run. The values for `birth_day` and `birth_month` were kept constant, as they do not impact the time complexity of the function. The chart results are shown below:
 
 ```console
 ➜ cat ./sub-array-division/results.csv | uplot line -d, -w 50 -h 15 -t Results --canvas ascii --xlabel n --ylabel "T(n)"
@@ -151,3 +157,5 @@ To benchmark this solution we varied $n$ from `n = 0` up to `n = 100_000`, with 
           0                                             100000
                                    n
 ```
+
+For the implementation details, see [benchmarking.rb](./benchmarking.rb).
