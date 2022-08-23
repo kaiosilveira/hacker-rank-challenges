@@ -18,6 +18,7 @@ See below a list with all solved challenges:
 - [Divisible sum pairs](./divisible-sum-pairs/)
 - [Simple array sum](./simple-array-sum/)
 - [Sub array division](./sub-array-division/)
+- [Birthday cake candles - WIP](./birthday-cake-candles/)
 
 ## Programming language choice
 
