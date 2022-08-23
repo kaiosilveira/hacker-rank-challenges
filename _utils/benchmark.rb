@@ -29,14 +29,15 @@ module HackerRank
 
     def self.create_time_complexity_analysis(
       method_name:,
-      n_max:,
       file_name:,
+      n_max:,
+      n0: 0,
       n_incrementation_step: 1,
       space_between_chart_items: 1
     )
       BenchmarkUtils.benchmarking_n_times(
         method(method_name),
-        n0: 0,
+        n0: n0,
         n_max: n_max,
         step: n_incrementation_step
       ) do |n_values, time_results|
