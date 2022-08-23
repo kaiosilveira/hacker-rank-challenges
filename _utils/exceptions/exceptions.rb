@@ -19,5 +19,14 @@ module HackerRank
         )
       end
     end
+
+    class ArrayOutOfConstraintsException < Exception
+      def initialize
+        super(
+          "An array that does not follow the constraints was passed as a parameter. To explicity allow that, set ALLOW_UNCONSTRAINED_ARRAYS=enabled"
+        )
+      end
+    end
+
   end
 end
