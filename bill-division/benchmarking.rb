@@ -11,7 +11,7 @@ include ArrayUtils
 MAX_N_SIZE = 10000
 
 def invoke_validate_bill_division_with_bill_of_size(n)
-  validate_bill_division(
+  HackerRank::Algorithms.validate_bill_division(
     bill_items: create_array_of_random_integers(size: n + 1),
     index_of_item_anna_refused_to_eat: n / 2,
     bill_division_according_to_brian: 3
