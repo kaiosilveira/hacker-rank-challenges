@@ -15,7 +15,7 @@ MAX_N_SIZE = 100_000
 ENV["ALLOW_UNCONSTRAINED_ARRAYS_ENABLED"] = "enabled"
 
 def invoke_count_max_items_with_array_of_size(n)
-  HackerRank::Solutions.count_max_items(
+  HackerRank::Algorithms.count_max_items(
     arr: create_array_of_random_integers(size: n + 1)
   )
 end
