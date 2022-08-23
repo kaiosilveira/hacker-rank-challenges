@@ -1,4 +1,4 @@
-require_relative './count_max_items.rb'
+require_relative './challenge.rb'
 require_relative '../_utils/hacker-rank/hacker-rank.rb'
 
 samples = [
@@ -6,5 +6,5 @@ samples = [
 ]
 
 HackerRank::Runner.new(samples).run do |arr|
-  HackerRank::Solutions.count_max_items(arr: arr)
+  HackerRank::Challenges.birthday_cake_candles(arr)
 end
