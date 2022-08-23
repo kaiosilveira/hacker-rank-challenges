@@ -3,6 +3,12 @@ module HackerRank
     { params: params, expected_resp: expected_result }
   end
 
+  module Samples
+    def self.create_sample(expected_result:, params:)
+      { params: params, expected_resp: expected_result }
+    end
+  end
+
   class Runner
 
     def initialize(samples, quiet: false)
@@ -26,4 +32,5 @@ module HackerRank
     end
 
   end
+
 end
