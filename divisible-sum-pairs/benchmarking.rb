@@ -1,11 +1,10 @@
-require "benchmark"
-require "securerandom"
+require 'benchmark'
 
-require_relative "./get-divisible-sum-pairs.rb"
-require_relative "../_utils/benchmark.rb"
-require_relative "../_utils/chart.rb"
-require_relative "../_utils/number/number.rb"
-require_relative "../_utils/array/array.rb"
+require_relative './get_divisible_sum_pairs.rb'
+require_relative '../_utils/benchmark.rb'
+require_relative '../_utils/chart.rb'
+require_relative '../_utils/number/number.rb'
+require_relative '../_utils/array/array.rb'
 
 include NumberUtils
 include ArrayUtils
@@ -13,7 +12,7 @@ include ArrayUtils
 MAX_N_SIZE = 100
 
 def invoke_get_divisible_sum_pairs_with_array_of_size(n)
-  get_divisible_sum_pairs(
+  HackerRank::Algorithms.get_divisible_sum_pairs(
     arr: create_array_of_random_integers(size: n),
     k: [1, create_random_integer].max
   )
