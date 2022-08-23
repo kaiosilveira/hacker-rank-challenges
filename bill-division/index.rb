@@ -1,18 +1,11 @@
-require_relative "./validate-bill-division"
-
-def bonAppetit(bill, k, b)
-  result = validate_bill_division(
-    bill_items: bill,
-    index_of_item_anna_refused_to_eat: k,
-    bill_division_according_to_brian: b
-  )
-
-  puts result
-end
+require_relative './challenge.rb'
+require_relative '../_utils/hacker-rank/hacker-rank.rb'
 
 samples = [
-  { bill: [2, 4, 6], k: 2, b: 3 },
-  { bill: [3, 10, 2, 9], k: 1, b: 12 },
+  HackerRank.create_sample(expected_result: 'Bon Appetit', params: [[2, 4, 6], 2, 3]),
+  HackerRank.create_sample(expected_result: 5, params: [[3, 10, 2, 9], 1, 12]),
 ]
 
-samples.each { |sample| bonAppetit(sample[:bill], sample[:k], sample[:b]) }
+HackerRank::Runner.new(samples).run do |*params|
+  HackerRank::Challenges.bon_appetit(*params)
+end
