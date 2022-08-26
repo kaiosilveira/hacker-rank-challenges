@@ -28,5 +28,13 @@ module HackerRank
       end
     end
 
+    class InputOutOfConstraintsException < Exception
+      def initialize(input_name:, constraints:)
+        super(
+          "'#{input_name}' was out of the specified constraints. Expected #{constraints}."
+        )
+      end
+    end
+
   end
 end
