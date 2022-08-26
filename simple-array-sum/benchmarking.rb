@@ -1,4 +1,4 @@
-require_relative './simple-array-sum.rb'
+require_relative './array_sum.rb'
 require_relative '../_utils/benchmark.rb'
 require_relative '../_utils/array/array.rb'
 
@@ -8,7 +8,9 @@ include BenchmarkUtils
 MAX_N_SIZE = 10000
 
 def execute_simple_array_sum_with_array_of_size(n)
-  simple_array_sum(ArrayUtils.create_array_of_random_integers(size: n))
+  HackerRank::Algorithms.array_sum(
+    ArrayUtils.create_array_of_random_integers(size: n)
+  )
 end
 
 BenchmarkUtils.create_time_complexity_analysis(
