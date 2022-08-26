@@ -1,4 +1,4 @@
-require_relative './simple-array-sum.rb'
+require_relative './challenge.rb'
 require_relative '../_utils/hacker-rank/hacker-rank.rb'
 
 samples = [
@@ -7,5 +7,5 @@ samples = [
 ]
 
 HackerRank::Runner.new(samples).run do |params|
-  simple_array_sum(params)
+  HackerRank::Challenges.simple_array_sum(params)
 end
