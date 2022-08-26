@@ -1,35 +1,23 @@
 require "benchmark"
 
-require_relative "./left-rotation.rb"
+require_relative "./perform_left_rotation.rb"
 require_relative "../_utils/benchmark.rb"
 require_relative "../_utils/chart.rb"
 
-MAX_N_SIZE = 100000
+MAX_N_SIZE = 100_000
 
 def create_array_of_integers(n)
   (0..n).to_a
 end
 
 def invoke_perform_left_rotation_with_array_of_size(n)
-  perform_left_rotation(2, create_array_of_integers(n))
+  HackerRank::Algorithms.perform_left_rotation(offset: 2, array: create_array_of_integers(n))
 end
 
-BenchmarkUtils.benchmarking_n_times(
-  method(:invoke_perform_left_rotation_with_array_of_size),
-  n0: 0,
-  n_max: MAX_N_SIZE
-) do |n_values, time_results|
-  results = ChartUtils.prepare_chart_data_with(
-    x_axis: n_values,
-    y_axis: time_results,
-    max_x_size: MAX_N_SIZE,
-    step: 2500
-  )
-
-  BenchmarkUtils.write_benchmark_results_to_csv(
-    filename: './results.csv',
-    x_label: 'n',
-    y_label: 'T(n)',
-    data: results
-  )
-end
+HackerRank::Benchmarking.create_time_complexity_analysis(
+  method_name: :invoke_perform_left_rotation_with_array_of_size,
+  n0: 2,
+  n_max: MAX_N_SIZE,
+  n_incrementation_step: 2500,
+  file_name: "#{File.expand_path File.dirname(__FILE__)}/results.csv"
+)
