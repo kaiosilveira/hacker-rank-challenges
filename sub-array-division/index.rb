@@ -1,4 +1,4 @@
-require_relative './select-chocolate-slices-matching-criteria.rb'
+require_relative './challenge.rb'
 require_relative '../_utils/hacker-rank/hacker-rank.rb'
 
 samples = [
@@ -8,9 +8,5 @@ samples = [
 ]
 
 HackerRank::Runner.new(samples).run do |d, m, arr|
-  select_chocolate_slices_matching_criteria(
-    birth_day: d,
-    birth_month: m,
-    chocolate: arr
-  )
+  HackerRank::Challenges.birthday(d, m, arr)
 end
