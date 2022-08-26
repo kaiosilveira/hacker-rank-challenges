@@ -10,17 +10,23 @@ Note: This is probably the easiest challenge in the entire Hacker Rank platform,
 
 ## Test suite
 
-The test suite for this challenge contains two tests:
+The test suite for this challenge covers the constraints mentioned above, the particular case when the array has `size = 0` and a happy path. The tests are:
 
-- one for when the array is empty, which expects zero as a result
-- oen for then the array contains valid integer elements, which expects the correct sum≥
+- `test_raises_exception_if_the_input_array_has_more_than_10_000_items_and_the_constrain_flag_is_disabled`
+- `test_executes_with_large_array_if_unconstrained_arrays_are_allowed`
+- `test_returns_zero_when_array_is_empty`
+- `test_returns_the_correct_sum_for_an_array_of_integers`
+
+For implementation details, see [simple_array_sum.spec.rb](./array_sum.spec.rb).
 
 ## Samples
 
 The two samples provided by Hacker Rank are:
 
-- expected result: 6, arr: [1, 2, 3]
-- expected result: 31, arr: [1, 2, 3, 4, 10, 11]
+| array                | expected result |
+| -------------------- | --------------- |
+| [1, 2, 3]            | 6               |
+| [1, 2, 3, 4, 10, 11] | 31              |
 
 For an extra sanity check, we can run these samples against our function using our `HackerRank::Runner` class:
 
@@ -118,3 +124,5 @@ And the chart for the results:
             0                                              10000
                                      n
 ```
+
+For details regarding the benchmark implementation, see [benchmark.rb](./benchmarking.rb).
