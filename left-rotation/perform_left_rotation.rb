@@ -3,7 +3,9 @@ require_relative '../_utils/exceptions/exceptions.rb'
 module HackerRank
   module Algorithms
     def self.perform_left_rotation(offset:, array:)
-      if array.size < 1 || array.size > 100_000
+      allow_unconstrained_arrays = ENV["ALLOW_UNCONSTRAINED_ARRAYS_ENABLED"] == "enabled"
+
+      if array.size < 1 || array.size > 100_000 && !allow_unconstrained_arrays
         raise HackerRank::Exceptions::InputOutOfConstraintsException.new(
           input_name: 'array',
           constraints: '1 <= array.size <= 100_000'
