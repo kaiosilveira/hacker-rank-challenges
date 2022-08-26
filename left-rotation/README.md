@@ -10,10 +10,17 @@ A left rotation operation on an array of size `n` shifts each of the array's ele
 
 ## Test suite
 
-A simple [test suite](./left-rotation.spec.rb) was put in place for this example. It simply checks that for a given `arr = [1, 2, 3, 4, 5]` and `d = 2`, the expected result is `[3, 4, 5, 1, 2]`. Which is enough to validate that:
+The test suite for this challenge covers the constraints mentioned above and also contains a happy path using `arr = [1, 2, 3, 4, 5]` and `offset = 2`, which has the expected result as being `[3, 4, 5, 1, 2]`.
 
-- all elements are being shifted the expected number of positions
-- overflowing elements are being added to the beginning instead of causing an error
+The tests are:
+
+- `test_raises_exception_if_the_offset_value_is_less_than_1`
+- `test_raises_exception_if_the_offset_value_is_greater_than_array_size`
+- `test_raises_exception_if_the_input_array_has_more_than_100_000_items`
+- `test_raises_exception_if_the_input_array_has_less_than_1_item`
+- `test_shifts_the_elements_d_positions_to_the_left`
+
+For implementation details, see [the full test suite](./perform_left_rotation.spec.rb).
 
 ## Algorithm resolution description
 
@@ -35,6 +42,37 @@ The problem with the code above, though, is that it will throw an `RangeError` w
   (0..arr.size - 1).map { |n| arr[(n + d) % arr.size] }
 ```
 
+## Samples
+
+The challenge gives us a single sample:
+
+| d   | arr             | expected result |
+| --- | --------------- | --------------- |
+| 2   | [1, 2, 3, 4, 5] | [3, 4, 5, 1, 2] |
+
+We can feed it into our runner:
+
+```ruby
+samples = [
+  HackerRank::Samples.create_sample(expected_result: [3, 4, 5, 1, 2], params: [2, [1, 2, 3, 4, 5]]),
+]
+
+HackerRank::Runner.new(samples).run do |*params|
+  d, arr = params
+  HackerRank::Challenges.left_rotation(d, arr)
+end
+```
+
+Which outputs:
+
+```console
+➜ ruby left-rotation/index.rb
+Running sample #1
+Success! ✅
+```
+
+Which is a good indicative that everything is fine.
+
 ## Implementation benchmarking & algorithm complexity analysis
 
 To calculate the computational time complexity for this implementation we can decompose the code parts, analyze them separately and then sum the results.
@@ -54,8 +92,7 @@ i.e., the implementation has Linear time complexity.
 
 **Benchmarking**
 
-To benchmark this implementation, an arbitrary `d = 2` was chosen and 100.000 arrays were created and passed to `perform_left_rotation` to measure the results. Each array had `i` items, with `i` ranging from `0` up to the hard limit mentioned by Hacker Rank for this challenge: `10^5`. The results were aggregated and a `csv` file was created off of them, with a space of 2500 items between entries.
-Below, the results confirm a pretty clear indication of a linear correlation between the input array size (`n`) and the amount of time it takes to perform the operation (`T(n)`), indicating a complexity in the order of `O(n)`.
+To benchmark this implementation, an arbitrary `d = 2` was chosen and 100.000 arrays were created and passed to `perform_left_rotation` to measure the results. Each array had `i` items, with `i` ranging from `0` up to the hard limit mentioned by Hacker Rank for this challenge: `10^5`. The results were aggregated and a `csv` file was created off of them, with a space of 2500 items between entries. Below, the results confirm a pretty clear indication of a linear correlation between the input array size (`n`) and the amount of time it takes to perform the operation (`T(n)`), indicating a complexity in the order of `O(n)`.
 
 ```console
 ➜ cat ./left-rotation/results.csv | uplot line -d, -w 50 -h 15 -t Results --canvas ascii --xlabel n --ylabel "T(n)"
