@@ -1,5 +1,7 @@
 # Sub array division
 
+Challenge URL: https://www.hackerrank.com/challenges/the-birthday-bar/problem
+
 Two children, Lily and Ron, want to share a chocolate bar. Each of the squares has an integer on it.
 Lily decides to share a contiguous segment of the bar selected such that:
 
@@ -66,9 +68,11 @@ And that's it!
 
 Three samples were provided by the challenge description:
 
-- `birth_day = 4`, `birth_month = 2` and `chocolate = [2, 2, 1, 3, 2]`. Expected result is `2`
-- `birth_day = 3`, `birth_month = 2` and `chocolate = [1, 2, 1, 3, 2]`. Expected result is `1`
-- `birth_day = 3`, `birth_month = 2` and `chocolate = [1, 1, 1, 1, 1, 1]`. Expected result is `1`
+| s (chocolate)      | d (birth_day) | m (birth_month) | expected result |
+| ------------------ | ------------- | --------------- | --------------- |
+| [2, 2, 1, 3, 2]    | 4             | 2               | 2               |
+| [1, 2, 1, 3, 2]    | 3             | 2               | 1               |
+| [1, 1, 1, 1, 1, 1] | 3             | 2               | 1               |
 
 We can feed this data into our runner:
 
@@ -80,11 +84,7 @@ We can feed this data into our runner:
   ]
 
   HackerRank::Runner.new(samples).run do |d, m, arr|
-    select_chocolate_slices_matching_criteria(
-      birth_day: d,
-      birth_month: m,
-      chocolate: arr
-    )
+    HackerRank::Challenges.birthday(d, m, arr)
   end
 ```
 
