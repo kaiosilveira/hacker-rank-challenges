@@ -1,7 +1,5 @@
 # Birthday cake candles
 
-🚧 WORK IN PROGRESS 🚧
-
 You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. Count how many candles are tallest.
 
 **Function signature**
@@ -11,13 +9,21 @@ The signature that the challenge expects is `birthdayCakeCandles(candles) -> num
 - params: `candles: Array<Integer>` -> Array of integers containing the candle heights
 - returns: `number_of_candles_that_are_tallest: Integer` -> The number of candles that are tallest
 
-
 **Constraints**
 
 - $1 \leq n \leq 10^{5}$
 - $1 \leq candles[i] \leq 10^{7}$
 
 ## Test suite
+
+The test suite for this challenge contains tests covering the constraints describe above and two happy paths with asserting that both a single or maximum or many maxima are detected. The tests are:
+
+- `test_raises_an_exception_if_arr_is_smaller_than_1_and_the_allow_unconstrained_flag_is_disabled`
+- `test_raises_an_exception_if_arr_is_greater_than_100_000_and_the_allow_unconstrained_flag_is_disabled`
+- `test_counts_a_single_tallest_item`
+- `test_counts_multiple_tallest_items`
+
+For the implementation details, see the [full test suite](./count_max_items.spec.rb).
 
 ## Challenge resolution description
 
@@ -37,9 +43,11 @@ And that's it!
 
 ## Samples
 
-One single sample was provided for this challenge:
+The sample provided by the challenge is:
 
-- `candles = [3, 2 ,1, 3]`, with the expected result being `2`.
+| candles      | expected result |
+| ------------ | --------------- |
+| [3, 2, 1, 3] | 2               |
 
 We can feed this sample into our runner:
 
