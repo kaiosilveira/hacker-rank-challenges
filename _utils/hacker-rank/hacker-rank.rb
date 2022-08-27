@@ -1,3 +1,5 @@
+require 'benchmark'
+
 module HackerRank
   def self.create_sample(expected_result:, params:)
     { params: params, expected_resp: expected_result }
@@ -17,16 +19,19 @@ module HackerRank
     end
 
     def run(&block)
-      @samples.each.with_index(0) do |sample, index|
-        puts "Running sample ##{index+1}"
-        expected_resp = sample[:expected_resp]
+      Benchmark.benchmark do |x|
+        @samples.each.with_index(0) do |sample, index|
+          x.report("Running sample ##{index+1}\n") do
+            expected_resp = sample[:expected_resp]
 
-        r = block.call(*sample[:params])
+            r = block.call(*sample[:params])
 
-        if r == expected_resp && !@quiet
-          puts "Success! ✅"
-        elsif r != expected_resp
-          puts "Failed! ❌ | Expected #{expected_resp.inspect} but received #{r.inspect}\n"
+            if r == expected_resp && !@quiet
+              puts "Success! ✅"
+            elsif r != expected_resp
+              puts "Failed! ❌ | Expected #{expected_resp.inspect} but received #{r.inspect}\n"
+            end
+          end
         end
       end
     end
