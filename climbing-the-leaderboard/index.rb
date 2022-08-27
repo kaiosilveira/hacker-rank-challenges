@@ -3,6 +3,8 @@ require 'benchmark'
 require_relative './challenge.rb'
 require_relative '../_utils/hacker-rank/hacker-rank.rb'
 
+ENV["ALLOW_UNCONSTRAINED_ARRAYS_ENABLED"] = "enabled"
+
 large_expected_result = []
 File.open("#{File.expand_path File.dirname(__FILE__)}/expected_result.txt").each_line do |line|
   large_expected_result << Integer(line)

@@ -20,7 +20,12 @@ module HackerRank
         )
       end
 
-      def test_raises_exception_if_lookup_array_has_less_than_one_item_and_flag_is_disabled
+      def teardown
+        ENV["ALLOW_UNCONSTRAINED_ARRAYS_ENABLED"] = "disabled"
+      end
+
+      def test_raises_exception_if_lookup_array_has_less_than_one_item
+        ENV["ALLOW_UNCONSTRAINED_ARRAYS_ENABLED"] = "disabled"
         assert_raises @lookup_array_out_of_constraints_exception do
           Algorithms.find_indexes(
             lookup_arr: create_array_of_random_integers(size: 0),
@@ -30,6 +35,7 @@ module HackerRank
       end
 
       def test_raises_exception_if_lookup_array_has_more_than_100_000_items_and_flag_is_disabled
+        ENV["ALLOW_UNCONSTRAINED_ARRAYS_ENABLED"] = "disabled"
         assert_raises @lookup_array_out_of_constraints_exception do
           Algorithms.find_indexes(
             lookup_arr: create_array_of_random_integers(size: 100_001),
@@ -38,7 +44,16 @@ module HackerRank
         end
       end
 
+      def test_executes_if_lookup_array_has_more_than_100_000_items_and_flag_is_enabled
+        ENV["ALLOW_UNCONSTRAINED_ARRAYS_ENABLED"] = "enabled"
+        assert Algorithms.find_indexes(
+          lookup_arr: create_array_of_random_integers(size: 100_001),
+          array_to_iterate: create_array_of_random_integers(size: 100)
+        )
+      end
+
       def test_raises_exception_if_array_to_iterate_has_less_than_one_item_and_flag_is_disabled
+        ENV["ALLOW_UNCONSTRAINED_ARRAYS_ENABLED"] = "disabled"
         assert_raises @array_to_iterate_out_of_constraints_exception do
           Algorithms.find_indexes(
             lookup_arr: create_array_of_random_integers(size: 100),
