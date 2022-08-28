@@ -69,7 +69,7 @@ See [ruby.yml](./.github/workflows/ruby.yml) for the actual file.
 
 ## Benchmarking
 
-To benchmark the code execution, the [benchmark](https://github.com/ruby/benchmark) gem was used. A [benchmark-utils.rb](./_utils/benchmark.rb) module was created to abstract the setup for the benchmarking, allowing the client code to call it passing a reference to the function to be executed and some more configuration parameters. The `BenchmarkUtils` module also aggregates the value of `n` and the time it took to run the function for each execution and give it back to the client code, so it can store the results and perform the graphical analysis later. See below an example of the benchmark in action:
+To benchmark the code execution, the [benchmark](https://github.com/ruby/benchmark) gem was used. A [benchmarking.rb](./_utils/benchmark.rb) module was created to abstract the setup for the benchmarking, allowing the client code to call it passing a reference to the function to be executed and some more configuration parameters. The `Benchmarking` module also aggregates the value of `n` and the time it took to run the function for each execution and give it back to the client code, so it can store the results and perform the graphical analysis later. See below an example of the benchmark in action:
 
 ```console
 ➜ ruby ./left-rotation/benchmarking.rb
