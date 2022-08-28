@@ -6,7 +6,6 @@ ENV["ALLOW_UNCONSTRAINED_ARRAYS_ENABLED"] = "enabled"
 MAX_N_SIZE = 100_000
 
 include ArrayUtils
-include BenchmarkUtils
 
 def execute_sub_array_division_with_array_of_size(n)
   HackerRank::Algorithms.select_chocolate_slices_matching_criteria(
@@ -16,7 +15,7 @@ def execute_sub_array_division_with_array_of_size(n)
   )
 end
 
-BenchmarkUtils.create_time_complexity_analysis(
+HackerRank::Benchmarking.create_time_complexity_analysis(
   method_name: :execute_sub_array_division_with_array_of_size,
   n_max: MAX_N_SIZE,
   n_incrementation_step: 10000,
