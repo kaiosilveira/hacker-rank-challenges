@@ -19,6 +19,7 @@ See below a list with all solved challenges:
 - [Simple array sum](./simple-array-sum/)
 - [Sub array division](./sub-array-division/)
 - [Birthday cake candles](./birthday-cake-candles/)
+- [Electronics shop](./electronics-shop/)
 
 ## Programming language choice
 
