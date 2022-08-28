@@ -20,6 +20,7 @@ See below a list with all solved challenges:
 - [Sub array division](./sub-array-division/)
 - [Birthday cake candles](./birthday-cake-candles/)
 - [Electronics shop](./electronics-shop/)
+- [Cat and mouse](./cat-and-mouse/)
 
 ## Programming language choice
 
