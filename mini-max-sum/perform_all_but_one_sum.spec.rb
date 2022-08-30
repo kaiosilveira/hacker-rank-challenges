@@ -27,7 +27,7 @@ module HackerRank
         end
       end
 
-      def test_executes_if_array_has_more_than_100_000_000_items_and_flag_is_enabled
+      def test_executes_if_array_has_more_than_5_items_and_flag_is_enabled
         ENV["ALLOW_UNCONSTRAINED_ARRAYS_ENABLED"] = 'enabled'
         assert Algorithms.perform_all_but_one_sum(
           numbers: create_array_of_random_integers(size: 5),
