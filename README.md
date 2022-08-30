@@ -21,6 +21,7 @@ See below a list with all solved challenges:
 - [Birthday cake candles](./birthday-cake-candles/)
 - [Electronics shop](./electronics-shop/)
 - [Cat and mouse](./cat-and-mouse/)
+- [Mini max sum](./mini-max-sum/)
 
 ## Programming language choice
 
