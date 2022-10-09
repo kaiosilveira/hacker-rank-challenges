@@ -18,8 +18,10 @@ The signature that the challenge expects is `birthdayCakeCandles(candles) -> num
 
 The test suite for this challenge contains tests covering the constraints describe above and two happy paths with asserting that both a single or maximum or many maxima are detected. The tests are:
 
-- `test_raises_an_exception_if_arr_is_smaller_than_1_and_the_allow_unconstrained_flag_is_disabled`
-- `test_raises_an_exception_if_arr_is_greater_than_100_000_and_the_allow_unconstrained_flag_is_disabled`
+- `test_raises_an_exception_if_arr_is_smaller_than_1_and_constraints_are_enabled`
+- `test_does_not_raise_an_exception_if_arr_is_smaller_than_1_and_constraints_are_disabled`
+- `test_raises_an_exception_if_arr_is_greater_than_100_000_and_constraints_are_enabled`
+- `test_does_not_raise_an_exception_if_arr_is_greater_than_100_000_and_constraints_are_disabled`
 - `test_counts_a_single_tallest_item`
 - `test_counts_multiple_tallest_items`
 
