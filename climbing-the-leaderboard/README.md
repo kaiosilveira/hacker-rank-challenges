@@ -40,7 +40,6 @@ The full test suite can be seen at [find_indexes.spec.rb](./find_indexes.spec.rb
 The first step to solve this challenge is to create a unique set of items out of the `ranked` array, which in our code is called `lookup_arr`, so we can remove all the duplicate entries and gain some performance. Using `lookup_arr.uniq` here will not be enough, as I tried that and the submission was rejected because of time constraints (it was taking `160s` to execute). Thus, the built-in `Set` structure is the best construct to use to keep track of unique items.
 
 Next, with the unique items in ~~memory~~ hand, we can start to iterate over our `player` array (which is called `array_to_iterate` in our code). For each item we need to:
--
 
 ```ruby
 module HackerRank
