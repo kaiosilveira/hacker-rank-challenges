@@ -1,12 +1,28 @@
-def staircase(n)
-  sequence = (0...n).to_a
-  sequence.reverse.each do |n|
-    puts draw(n - 1, ' ') + draw(sequence.size - n - 1, '#')
-  end
-end
+require_relative './challenge.rb'
+require_relative '../_utils/hacker-rank/hacker-rank.rb'
+require_relative './challenge.rb'
 
-def draw(n, token)
-  (0..n).to_a.map { |n| token }.join('')
-end
+samples = [
+  HackerRank.create_sample(expected_result: ['#'], params: 1),
+  HackerRank.create_sample(
+    expected_result: [
+      ' #',
+      '##'
+    ],
+    params: 2
+  ),
+  HackerRank.create_sample(
+    expected_result: [
+      '    #',
+      '   ##',
+      '  ###',
+      ' ####',
+      '#####',
+    ],
+    params: 5
+  )
+]
 
-staircase(20)
+HackerRank::Runner.new(samples).run do |n|
+  HackerRank::Challenges.staircase(n)
+end
