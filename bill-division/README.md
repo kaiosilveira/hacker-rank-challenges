@@ -1,7 +1,7 @@
 # Bill division
 
 Two friends Anna and Brian, are deciding how to split the bill at a dinner. Each will only pay for the items they consume. Brian gets the check and calculates Anna's portion. You must determine if his calculation is correct.
-For example, assume the bill has the following prices: `bill = [2, 4, 6]`. Anna declines to eat item `k = bill[2]` which costs `6`. If Brian calculates the bill correctly, Anna will pay `(2 + 4) / 2 = 3`. If he includes the cost of `bill[2]`, he will calculate `(2 + 4 + 6) / 2 = 6`. In the second case, he should refund `3` to Anna.
+For example, assume the bill has the following prices: `bill = [2, 4, 6]`. Anna declines to eat item `k = bill[2]` which costs `6`. If Brian calculates the bill correctly, Anna will pay $(2 + 4) / 2 = 3$. If he includes the cost of `bill[2]`, he will calculate $(2 + 4 + 6) / 2 = 6$. In the second case, he should refund $3$ to Anna.
 
 **Function Description**
 
@@ -70,7 +70,10 @@ You may have noticed that this function's signature is not exactly the same as t
 
 ## Implementation benchmarking & algorithm complexity analysis
 
-Calculating the time complexity for this implementation is pretty straightforward, as we only have a bunch of variable assignments and simple math. Starting by the function parameters, the only structure with potential for growth is the `bill_items` array. This parameter is critical because we are reducing its values to get the total price of shared items. The `bill_items.reduce(&:+)` has `O(n)` complexity, as the `+` operation will happen `n` times, where `n` is the size of `bill_items`. See below a closer look into the big O notations for each statement:
+Let's now take a look at this implementation and see how it stands from a performance point of view. Below, we have a code analysis and a benchmarking of the solution.
+
+### Code analysis
+Calculating the time complexity for this implementation is pretty straightforward, as we only have a bunch of variable assignments and simple math. Starting by the function parameters, the only structure with potential for growth is the `bill_items` array. This parameter is critical because we are reducing its values to get the total price of shared items. The `bill_items.reduce(&:+)` has $O(n)$ complexity, as the `+` operation will happen `n` times, where `n` is the size of `bill_items`. See below a closer look into the big $O$ notations for each statement:
 
 ```ruby
   def validate_bill_division(
@@ -91,7 +94,7 @@ Calculating the time complexity for this implementation is pretty straightforwar
   end
 ```
 
-Then, the resulting expression for `T` is:
+Then, the resulting expression for $T$ is:
 
 - $T = O(1) + n.O(1) + O(1) + O(1) + O(1) + O(1) + O(1)$
 
@@ -103,9 +106,9 @@ Getting rid of the constants, we're left with:
 
 - $T = n.O(1)$
 
-Then, considering that `O(1)` is the coefficient here, as `n` may vary as well, we have deduced that `T` is in the order of `n`, and thus the function has a `O(n)` complexity.
+Then, considering that $O(1)$ is the coefficient here, as $n$ may vary as well, we have deduced that $T$ is in the order of $n$, and thus the function has a $O(n)$ complexity.
 
-**Benchmarking**
+### Benchmarking
 
 To benchmark this function execution, the following arbitrary values were chosen for `index_of_item_anna_refused_to_eat` and `bill_division_according_to_brian`, as these values do not add to the function's complexity:
 
@@ -146,6 +149,6 @@ The following results were obtained after executing the function 10000 times, wi
                                         n
 ```
 
-The chart strongly suggests a linear time complexity `O(n)` for the function, as the code analysis had suggested previously.
+The chart strongly suggests a linear time complexity $O(n)$ for the function, as the code analysis had suggested previously.
 
 For further implementation details, see [benchmarking.rb](./benchmarking.rb).
