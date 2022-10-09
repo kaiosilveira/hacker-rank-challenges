@@ -1,6 +1,6 @@
 [![Continuous Integration](https://github.com/kaiosilveira/hacker-rank-challenges/actions/workflows/ruby.yml/badge.svg)](https://github.com/kaiosilveira/hacker-rank-challenges/actions/workflows/ruby.yml)
 
-# hacker-rank-challenges
+# Hacker Rank Challenges
 
 This repository is an aggregator of Hacker Rank challenge resolutions. Each subdirectory that doesn't start with an underscore is a different challenge from Hacker Rank. Inside each of them, you'll find a similar structure, with:
 
@@ -13,15 +13,19 @@ This repository is an aggregator of Hacker Rank challenge resolutions. Each subd
 
 See below a list with all solved challenges:
 
-- [Left rotation](./left-rotation/)
 - [Bill division](./bill-division/)
-- [Divisible sum pairs](./divisible-sum-pairs/)
-- [Simple array sum](./simple-array-sum/)
-- [Sub array division](./sub-array-division/)
 - [Birthday cake candles](./birthday-cake-candles/)
 - [Electronics shop](./electronics-shop/)
 - [Cat and mouse](./cat-and-mouse/)
+- [Climbing the leader board](./climbing-the-leaderboard/) 🚧 WIP - missing docs 🚧
+- [Divisible sum pairs](./divisible-sum-pairs/)
+- [Electronics shop](./divisible-sum-pairs/)
+- [Left rotation](./left-rotation/)
 - [Mini max sum](./mini-max-sum/)
+- [Simple array sum](./simple-array-sum/)
+- [Sub array division](./sub-array-division/)
+- [Staircase](./sub-array-division/) 🚧 WIP - missing tests, benchmarking and docs 🚧
+- [Viral Advertising](./viral-advertising/)
 
 ## Programming language choice
 
