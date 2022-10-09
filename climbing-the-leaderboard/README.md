@@ -24,7 +24,7 @@ For 60% of the maximum score:
 
 ## Test suite
 
-The test suite for this challenge covers both arrays' constraints mentioned above, a happy path and a happy - `path with the flag to change from 0-based indexes to 1-based indexes in the response. The tests are:`
+The test suite for this challenge covers both arrays' constraints mentioned above, a happy path and a happy path with the flag to change from 0-based indexes to 1-based indexes in the response. The tests are:
 
 - `test_raises_exception_if_lookup_array_has_less_than_one_item_and_flag_is_disabled`
 - `test_raises_exception_if_lookup_array_has_more_than_100_000_items_and_flag_is_disabled`
@@ -40,6 +40,12 @@ The full test suite can be seen at [find_indexes.spec.rb](./find_indexes.spec.rb
 The first step to solve this challenge is to create a unique set of items out of the `ranked` array, which in our code is called `lookup_arr`, so we can remove all the duplicate entries and gain some performance. Using `lookup_arr.uniq` here will not be enough, as I tried that and the submission was rejected because of time constraints (it was taking `160s` to execute). Thus, the built-in `Set` structure is the best construct to use to keep track of unique items.
 
 Next, with the unique items in ~~memory~~ hand, we can start to iterate over our `player` array (which is called `array_to_iterate` in our code). For each item we need to:
+
+- check if it is included in the `uniq_items_set`, if so, get its index
+- check if it is smallest than the last item in the `uniq_items` score, if so, the we keep the index of the scores array size
+- lastly, if none of the above is true, we perform a `bsearch_index` in the `uniq_items` array for all the existing items that are smaller or equal than the `item` score.
+
+The final code looks like this:
 
 ```ruby
 module HackerRank
@@ -125,9 +131,41 @@ A good indicative that the solution is looking good.
 
 ## Implementation benchmarking & algorithm complexity analysis
 
+Let's now take a look at this implementation and see how it stands from a performance point of view. Below, we have a code analysis and a benchmarking of the solution.
+
 **Code Analysis**
 
+We can do a quick code analysis on the solution by adding a comment with the time complexity for each line. Variable declarations and return statements are skipped here for simplicity (they're always O(1)):
+
+```ruby
+for item in array_to_iterate # n x block
+  if uniq_items_set.include?(item) # O(1)
+    index = uniq_items.index(item) # O(1)
+  elsif uniq_items.last > item # O(1)
+    index = uniq_items.size # O(1)
+  elsif
+    index = uniq_items.bsearch_index { |existing_item| existing_item <= item } # O(1)
+  end
+
+  indexes << index + increment # O(1)
+end
+```
+
+Which results in the following expression:
+
+$n.(O(1) + O(1) + O(1) + O(1) + O(1) + O(1))$
+
+Which can be simplified as:
+
+$n.6.O(1) \to 6O(1).n$
+
+As $6.O(1)$ is itself a constant, we can ignore it and say that the time complexity $T$ for this solution is in the order of $n$, i.e., it has a linear time complexity:
+
+$T = O(n)$
+
 **Benchmarking**
+
+To visually confirm the time complexity described above, a benchmarking was ran from $n = 1$ up to $n = 200000$, which resulted in the output below:
 
 ```console
 ➜ cat ./climbing-the-leaderboard/results.csv | uplot line -d, -w 50 -h 15 -t Results --canvas ascii --xlabel n --ylabel "T(n)"
@@ -152,3 +190,5 @@ A good indicative that the solution is looking good.
           0                                             200000
                                    n
 ```
+
+The value of each item inside the array was also randomized, using a max value of `1_000_000_000`.
