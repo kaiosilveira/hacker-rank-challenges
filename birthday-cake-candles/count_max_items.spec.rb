@@ -9,20 +9,28 @@ module HackerRank
 
       include ArrayUtils
 
-      def test_raises_an_exception_if_arr_is_smaller_than_1_and_the_allow_unconstrained_flag_is_disabled
-        ENV["ALLOW_UNCONSTRAINED_ARRAYS"] = "disabled"
-
-        assert_raises HackerRank::Exceptions::ArrayOutOfConstraintsException do
+      def test_raises_an_exception_if_arr_is_smaller_than_1_and_constraints_are_enabled
+        ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] = "enabled"
+        assert_raises HackerRank::Exceptions::InputOutOfConstraintsException do
           Algorithms.count_max_items(arr: create_array_of_random_integers(size: 0))
         end
       end
 
-      def test_raises_an_exception_if_arr_is_greater_than_100_000_and_the_allow_unconstrained_flag_is_disabled
-        ENV["ALLOW_UNCONSTRAINED_ARRAYS"] = "disabled"
+      def test_does_not_raise_an_exception_if_arr_is_smaller_than_1_and_constraints_are_disabled
+        ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] = "disabled"
+        Algorithms.count_max_items(arr: create_array_of_random_integers(size: 0))
+      end
 
-        assert_raises HackerRank::Exceptions::ArrayOutOfConstraintsException do
+      def test_raises_an_exception_if_arr_is_greater_than_100_000_and_constraints_are_enabled
+        ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] = "enabled"
+        assert_raises HackerRank::Exceptions::InputOutOfConstraintsException do
           Algorithms.count_max_items(arr: create_array_of_random_integers(size: 100001))
         end
+      end
+
+      def test_does_not_raise_an_exception_if_arr_is_greater_than_100_000_and_constraints_are_disabled
+        ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] = "disabled"
+        Algorithms.count_max_items(arr: create_array_of_random_integers(size: 100001))
       end
 
       def test_counts_a_single_tallest_item
