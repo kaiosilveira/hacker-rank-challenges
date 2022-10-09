@@ -11,6 +11,8 @@ jobs:
     strategy:
       matrix:
         ruby-version: ['2.6']
+    env:
+      CONSTRAINT_ENFORCEMENT_ENABLED: "enabled"
 
     steps:
     - uses: actions/checkout@v3
