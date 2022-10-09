@@ -17,7 +17,7 @@ See below a list with all solved challenges:
 - [Birthday cake candles](./birthday-cake-candles/)
 - [Electronics shop](./electronics-shop/)
 - [Cat and mouse](./cat-and-mouse/)
-- [Climbing the leader board](./climbing-the-leaderboard/) 🚧 WIP - missing docs 🚧
+- [Climbing the leader board](./climbing-the-leaderboard/)
 - [Divisible sum pairs](./divisible-sum-pairs/)
 - [Electronics shop](./divisible-sum-pairs/)
 - [Left rotation](./left-rotation/)
