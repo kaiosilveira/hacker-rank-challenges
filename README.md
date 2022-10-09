@@ -24,7 +24,7 @@ See below a list with all solved challenges:
 - [Mini max sum](./mini-max-sum/)
 - [Simple array sum](./simple-array-sum/)
 - [Sub array division](./sub-array-division/)
-- [Staircase](./sub-array-division/) 🚧 WIP - missing tests, benchmarking and docs 🚧
+- [Staircase](./sub-array-division/)
 - [Viral Advertising](./viral-advertising/)
 
 ## Programming language choice
