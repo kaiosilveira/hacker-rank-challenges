@@ -2,13 +2,15 @@
 
 # Hacker Rank Challenges
 
-This repository is an aggregator of Hacker Rank challenge resolutions. Each subdirectory that doesn't start with an underscore is a different challenge from Hacker Rank. Inside each of them, you'll find a similar structure, with:
+This repository is an aggregator of my Hacker Rank challenge resolutions. Inside each solution you will find:
 
 - a main file for the challenge, which contains the samples and the challenge execution (`index.rb`)
 - the actual code resolution for the challenge (`challenge.rb`)
 - a test suite (`*.spec.rb`)
 - a benchmark of the results (`benchmarking.rb`)
 - a `README.md` file with a detailed explanation of the code implemented
+
+My Hacker Rank profile is: [@silveira_kaio](https://www.hackerrank.com/silveira_kaio).
 
 ## Solved challenges
 
