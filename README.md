@@ -19,10 +19,10 @@ See below a list with all solved challenges:
 - [Bill division](./bill-division/)
 - [Beautiful days at the Movies](./beautiful-days/) 🚧 WIP 🚧
 - [Birthday cake candles](./birthday-cake-candles/)
-- [Cat and mouse](./cat-and-mouse/) (Co-authored-By: [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
+- [Cat and mouse](./cat-and-mouse/) (ft [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
 - [Climbing the leader board](./climbing-the-leaderboard/)
 - [Divisible sum pairs](./divisible-sum-pairs/)
-- [Electronics shop](./divisible-sum-pairs/) (Co-authored-By: [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
+- [Electronics shop](./divisible-sum-pairs/) (ft [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
 - [Left rotation](./left-rotation/)
 - [Mini max sum](./mini-max-sum/)
 - [Simple array sum](./simple-array-sum/)
