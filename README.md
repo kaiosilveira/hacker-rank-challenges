@@ -17,8 +17,8 @@ My Hacker Rank profile is: [@silveira_kaio](https://www.hackerrank.com/silveira_
 See below a list with all solved challenges:
 
 - [Bill division](./bill-division/)
+- [Beautiful days at the Movies](./beautiful-days/) 🚧 WIP 🚧
 - [Birthday cake candles](./birthday-cake-candles/)
-- [Electronics shop](./electronics-shop/)
 - [Cat and mouse](./cat-and-mouse/) (Co-authored-By: [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
 - [Climbing the leader board](./climbing-the-leaderboard/)
 - [Divisible sum pairs](./divisible-sum-pairs/)
@@ -28,6 +28,7 @@ See below a list with all solved challenges:
 - [Simple array sum](./simple-array-sum/)
 - [Sub array division](./sub-array-division/)
 - [Staircase](./sub-array-division/)
+- [Utopian Tree](./utopian-tree/)
 - [Viral Advertising](./viral-advertising/)
 
 ## Programming language choice
