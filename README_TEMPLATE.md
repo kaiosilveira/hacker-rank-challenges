@@ -15,12 +15,12 @@ Example here
 
 ## Test suite
 
-Testing approach and description
+The test suite for this challenge covers the constraints described above and a happy path using the example's data. The tests are:
 
 - `test_that_does_something_1`
 - `test_that_does_something_2`
 
-For the full test suite, please see [path_to_spec_file.spec.rb](./path_to_spec_file.rb).
+For the full test suite, see [path_to_spec_file.spec.rb](./path_to_spec_file.rb).
 
 ## Algorithm resolution description
 
@@ -80,7 +80,7 @@ Which means **CONSTANT|LINEAR|QUADRATIC** time complexity.
 
 ### Benchmarking
 
-To visually confirm the results proposed above, a benchmark was run from **BENCHMARK_FROM** up to **BENCHMARK_TO**, resulting in the following chart:
+To get a visual feeling of how the function behaves as $n$ increases, a benchmark was run from **BENCHMARK_N_ZERO** up to **BENCHMARK_N_MAX**, resulting in the following chart:
 
 ```console
 ➜ cat ./challeng/results.csv | uplot line -d, -w 50 -h 15 -t Results --canvas ascii --xlabel n --ylabel "T(n)"
@@ -106,6 +106,6 @@ To visually confirm the results proposed above, a benchmark was run from **BENCH
                                       n
 ```
 
-Which, ignoring eventual CPU fluctuations, matches the given time complexity pattern calculated by the previous code analysis.
+Which, ignoring eventual CPU fluctuations, matches the given time complexity pattern theoretically demonstrated by the code analysis above.
 
 For the full benchmarking code, see [benchmarking.rb](./benchmarking.rb).
