@@ -17,7 +17,7 @@ My Hacker Rank profile is: [@silveira_kaio](https://www.hackerrank.com/silveira_
 See below a list with all solved challenges:
 
 - [Bill division](./bill-division/)
-- [Beautiful days at the Movies](./beautiful-days/) 🚧 WIP 🚧
+- [Beautiful days at the Movies](./beautiful-days/)
 - [Birthday cake candles](./birthday-cake-candles/)
 - [Cat and mouse](./cat-and-mouse/) (ft [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
 - [Climbing the leader board](./climbing-the-leaderboard/)
