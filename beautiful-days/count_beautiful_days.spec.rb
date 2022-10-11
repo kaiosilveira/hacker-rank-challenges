@@ -7,6 +7,14 @@ module HackerRank
     class CountBeautifulDaysTests < Test::Unit::TestCase
       include HackerRank::Exceptions
 
+      def setup
+        ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] = "enabled"
+      end
+
+      def teardown
+        ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] = "enabled"
+      end
+
       def test_raises_an_exception_if_day0_is_lower_than_1
         assert_raises Exceptions::InputOutOfConstraintsException do
           Algorithms.count_beautiful_days(day0: 0, dayN: 1, divisor: 2)
@@ -31,22 +39,38 @@ module HackerRank
         end
       end
 
-      def test_raises_an_exception_if_dayN_is_greater_than_2_000_000
+      def test_raises_an_err_if_dayN_is_greater_than_2_000_000_and_ctt_v8n_enabled
         assert_raises Exceptions::InputOutOfConstraintsException do
           Algorithms.count_beautiful_days(day0: 2_000_000, dayN: 2_000_002, divisor: 2)
         end
       end
 
-      def test_raises_an_exception_if_divisor_is_lower_than_1
+      def test_does_not_raise_ex_if_dayN_is_greater_than_2_000_000_and_ctt_v8n_disabled
+        ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] = "disabled"
+        Algorithms.count_beautiful_days(day0: 20, dayN: 2_000_002, divisor: 2)
+      end
+
+      def test_raises_ex_if_divisor_is_lower_than_1
         assert_raises Exceptions::InputOutOfConstraintsException do
           Algorithms.count_beautiful_days(day0: 20, dayN: 23, divisor: 0)
         end
       end
 
-      def test_raises_an_exception_if_divisor_is_greater_than_2_000_000_000
+      def test_raises_ex_if_divisor_is_greater_than_2_000_000_000
         assert_raises Exceptions::InputOutOfConstraintsException do
           Algorithms.count_beautiful_days(day0: 20, dayN: 23, divisor: 2_000_000_001)
         end
+      end
+
+      def test_raises_ex_if_divisor_is_greater_than_2_000_000_000_and_ctt_v8n_enabled
+        assert_raises Exceptions::InputOutOfConstraintsException do
+          Algorithms.count_beautiful_days(day0: 20, dayN: 23, divisor: 2_000_000_001)
+        end
+      end
+
+      def test_does_not_raise_ex_if_divisor_is_greater_than_2_000_000_000_and_ctt_v8n_disabled
+        ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] = "disabled"
+        Algorithms.count_beautiful_days(day0: 20, dayN: 23, divisor: 2_000_000_001)
       end
 
       def test_identifies_beautiful_days_correctly
