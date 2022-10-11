@@ -30,6 +30,8 @@ Algorithm resolution description
 # some ruby code here
 ```
 
+The final code, including constraint validations, is available [here](./path_to_file.rb).
+
 ## Samples
 
 The samples used to run a quick sanity check on the implementation are:
@@ -74,7 +76,7 @@ Which translates to the following expression:
 
 [expression breakdown]
 
-Which means some time complexity.
+Which means **CONSTANT|LINEAR|QUADRATIC** time complexity.
 
 ### Benchmarking
 
@@ -105,3 +107,5 @@ To visually confirm the results proposed above, a benchmark was run from **BENCH
 ```
 
 Which, ignoring eventual CPU fluctuations, matches the given time complexity pattern calculated by the previous code analysis.
+
+For the full benchmarking code, see [benchmarking.rb](./benchmarking.rb).
