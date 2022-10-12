@@ -2,6 +2,10 @@
 
 Challenge URL: https://www.hackerrank.com/challenges/designer-pdf-viewer/problem
 
+When a contiguous block of text is selected in a PDF viewer, the selection is highlighted with a blue rectangle. In this PDF viewer, each word is highlighted independently.
+
+There is a list of $26$ character heights aligned by index to their letters. For example, 'a' is at index  and 'z' is at index $25$. There will also be a string. Using the letter heights given, determine the area of the rectangle highlight in $mm^2$ assuming all letters are $1mm$ wide.
+
 **Example**
 
 Below it's a table with the examples shared in the challenge description:
@@ -53,7 +57,7 @@ With that in hand, we just need to find the highest / tallest char in the word. 
 tallest_char_height = word_heights.max
 ```
 
-And then, to find the actual area, we just need to multiply the amount of words by the tallest char height:
+And then, to find the actual area, as the width of each char is fixed at $1mm$, we just need to multiply the amount of words by the tallest char height:
 
 ```ruby
 tallest_char_height * word.size
@@ -137,7 +141,7 @@ Let's now take a look at this implementation and see how it stands from a perfor
 
 ### Code analysis
 
-Code analysis considerations
+The code analysis for this challenge is straightforward:
 
 ```ruby
 def self.calculate_rect_area(char_heights:, word:)
