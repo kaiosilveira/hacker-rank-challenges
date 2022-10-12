@@ -19,6 +19,7 @@ The test suite for this challenge covers the constraints described above and a h
 
 - `test_that_does_something_1`
 - `test_that_does_something_2`
+- `test_happy_path`
 
 For the full test suite, see [path_to_spec_file.spec.rb](./path_to_spec_file.rb).
 
