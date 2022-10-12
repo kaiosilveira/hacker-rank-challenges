@@ -21,6 +21,7 @@ See below a list with all solved challenges:
 - [Birthday cake candles](./birthday-cake-candles/)
 - [Cat and mouse](./cat-and-mouse/) (ft [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
 - [Climbing the leader board](./climbing-the-leaderboard/)
+- [Design PDF Viewer](./designer-pdf-viewer/)
 - [Divisible sum pairs](./divisible-sum-pairs/)
 - [Electronics shop](./divisible-sum-pairs/) (ft [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
 - [Left rotation](./left-rotation/)
