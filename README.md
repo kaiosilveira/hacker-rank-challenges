@@ -26,7 +26,6 @@ See below a list with all solved challenges:
 - [Electronics shop](./divisible-sum-pairs/) (ft [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
 - [Left rotation](./left-rotation/)
 - [Mini max sum](./mini-max-sum/)
-- [Picking Numbers](./picking-numbers/)
 - [Simple array sum](./simple-array-sum/)
 - [Sub array division](./sub-array-division/)
 - [Staircase](./sub-array-division/)
@@ -37,6 +36,7 @@ See below a list with all solved challenges:
 
 The following challenges are work in progress, they're probably missing documentation, proper benchmarking or some constraint validation tests:
 
+- [Picking Numbers](./picking-numbers/)
 - [Repeated String](./repeated-string/)
 
 ## Programming language choice 👨🏽‍💻
