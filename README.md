@@ -36,7 +36,6 @@ See below a list with all solved challenges:
 
 The following challenges are work in progress, they're probably missing documentation, proper benchmarking or some constraint validation tests:
 
-- [Between two sets](./between-two-sets/)
 - [Repeated String](./repeated-string/)
 
 ## Programming language choice 👨🏽‍💻
