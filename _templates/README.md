@@ -2,28 +2,31 @@
 
 Challenge URL:
 
-Challenge description
+Challenge description goes here
 
 **Example**
 
-Example here
+| input | expected result |
+| ----- | --------------- |
+| 'abc' | 5               |
+| 'def' | 3               |
+| 'ghi' | 5               |
 
 **Constraints**
 
-- constraint 1
-- constraint 2
+- $1 \leq n \leq 100 $
+- $1 \leq m \leq 100 $
 
-## Test suite
+## Test suite 🧪
 
 The test suite for this challenge covers the constraints described above and a happy path using the example's data. The tests are:
 
-- `test_that_does_something_1`
-- `test_that_does_something_2`
+- `test_raises_ex`
 - `test_happy_path`
 
-For the full test suite, see [path_to_spec_file.spec.rb](./path_to_spec_file.rb).
+For the full test suite, see [algorithm.spec.rb](./algorithm.spec.rb).
 
-## Algorithm resolution description
+## Algorithm resolution description 📄
 
 Algorithm resolution description
 
@@ -31,9 +34,9 @@ Algorithm resolution description
 # some ruby code here
 ```
 
-The final code, including constraint validations, is available [here](./path_to_file.rb).
+The final code, including constraint validations, is available [here](./algorithm.rb).
 
-## Samples
+## Samples 🥯
 
 The samples used to run a quick sanity check on the implementation are:
 
@@ -61,11 +64,11 @@ challenge output
 
 A good indicative that the solution looks reasonable.
 
-## Implementation benchmarking & time complexity analysis
+## Implementation benchmarking & time complexity analysis 📈
 
 Let's now take a look at this implementation and see how it stands from a performance point of view. Below, we have a code analysis and a benchmarking of the solution.
 
-### Code analysis
+### Code analysis 🕵🏽‍♂️
 
 Code analysis considerations
 
@@ -79,7 +82,7 @@ Which translates to the following expression:
 
 Which means **CONSTANT|LINEAR|QUADRATIC** time complexity.
 
-### Benchmarking
+### Benchmarking 📊
 
 To get a visual feeling of how the function behaves as $n$ increases, a benchmark was run from **BENCHMARK_N_ZERO** up to **BENCHMARK_N_MAX**, resulting in the following chart:
 
