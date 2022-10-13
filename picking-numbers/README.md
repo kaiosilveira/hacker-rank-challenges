@@ -142,7 +142,7 @@ input_arr.each.with_index do |current_number, index| # n x block
   sub_arr = [current_number] # O(1)
 
   input_arr.reject.with_index{ |_, idx| index == idx }.each do |candidate| # m x block
-    sub_arr << candidate if sub_arr.all? { |i| (i - candidate).abs <= 1 } # m x block
+    sub_arr << candidate if sub_arr.all? { |i| (i - candidate).abs <= 1 } # O(1)
   end
 
   current_pointer += 1 # O(1)
@@ -152,13 +152,25 @@ end
 
 Which translates to the following expression:
 
-[expression breakdown]
+$n.(O(1) + m.O(1) + O(1) + O(1))$
 
-Which means **CONSTANT|LINEAR|QUADRATIC** time complexity.
+Which can be simplified as:
+
+$n.m.O(1)$
+
+As $n = m -1$, for large enough inputs we can say that $n \approx m$. Therefore:
+
+$n.m.O(1) \approx O(1).n^{2}$
+
+As we are only interested in the fastest growing term, we can say that the time complexity $T$ for this implementation is:
+
+$T = O(n^2)$
+
+Which means a **Quadratic** time complexity.
 
 ### Benchmarking 📊
 
-To get a visual feeling of how the function behaves as $n$ increases, a benchmark was run from $n = 1$ up to $n = 1000$, resulting in the following chart:
+To get a visual feeling of how the function behaves as $n$ increases, a benchmark was run using $n = 1$ up to $n = 1000$, where $n$ is the size of the input array. The results are plotted in the following chart:
 
 ```console
 ➜ cat ./picking-numbers/results.csv | uplot line -d, -w 50 -h 15 -t Results --canvas ascii --xlabel n --ylabel "T(n)"
