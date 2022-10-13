@@ -43,6 +43,11 @@ The following challenges are work in progress, they're probably missing document
 
 Because of its simplicity, elegance and API completeness, Ruby was the chosen programming language to implement the code for the challenges.
 
+### Available tasks
+
+- `rake test`: run all unit tests from all files
+- `rake create_challenge'[challenge_name]'`: create a new directory with the default structure for a challenge
+
 ## Testing & Continuous integration 🧪
 
 Each challenge contains a unit test suite covering the constraints described by the challenge itself, at least one happy path, and sometimes some interesting particular cases.
