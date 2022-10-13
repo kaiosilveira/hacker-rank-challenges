@@ -37,6 +37,7 @@ See below a list with all solved challenges:
 The following challenges are work in progress, they're probably missing documentation, proper benchmarking or some constraint validation tests:
 
 - [Repeated String](./repeated-string/)
+- [Picking Numbers](./picking-numbers/)
 
 ## Programming language choice 👨🏽‍💻
 
