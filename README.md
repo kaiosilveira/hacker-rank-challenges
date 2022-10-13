@@ -38,6 +38,7 @@ The following challenges are work in progress, they're probably missing document
 
 - [Picking Numbers](./picking-numbers/)
 - [Repeated String](./repeated-string/)
+- [Angry Professor](./angry-professor/)
 
 ## Programming language choice 👨🏽‍💻
 
