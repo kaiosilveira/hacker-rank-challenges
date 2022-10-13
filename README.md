@@ -12,7 +12,7 @@ This repository is an aggregator of my Hacker Rank challenge resolutions. Inside
 
 My Hacker Rank profile is: [@silveira_kaio](https://www.hackerrank.com/silveira_kaio).
 
-## Solved challenges
+## Solved challenges ✅
 
 See below a list with all solved challenges:
 
@@ -32,11 +32,18 @@ See below a list with all solved challenges:
 - [Utopian Tree](./utopian-tree/)
 - [Viral Advertising](./viral-advertising/)
 
-## Programming language choice
+### Work in progress 🚧
+
+The following challenges are work in progress, they're probably missing documentation, proper benchmarking or some constraint validation tests:
+
+- [Between two sets](./between-two-sets/)
+- [Repeated String](./repeated-string/)
+
+## Programming language choice 👨🏽‍💻
 
 Because of its simplicity, elegance and API completeness, Ruby was the chosen programming language to implement the code for the challenges.
 
-## Testing & Continuous integration
+## Testing & Continuous integration 🧪
 
 Each challenge contains a unit test suite covering the constraints described by the challenge itself, at least one happy path, and sometimes some interesting particular cases.
 
@@ -77,7 +84,7 @@ jobs:
 
 See [ruby.yml](./.github/workflows/ruby.yml) for the actual file.
 
-## Benchmarking
+## Benchmarking ⏰
 
 To benchmark the code execution, the [benchmark](https://github.com/ruby/benchmark) gem was used. A [benchmarking.rb](./_utils/benchmark.rb) module was created to abstract the setup for the benchmarking, allowing the client code to call it passing a reference to the function to be executed and some more configuration parameters. The `Benchmarking` module also aggregates the value of `n` and the time it took to run the function for each execution and gives it back to the client code, so it can store the results and perform the graphical analysis later. See below an example of the benchmark in action:
 
@@ -96,7 +103,7 @@ n = 9  0.000003   0.000001   0.000004 (0.000003)
 n = 10  0.000005   0.000001   0.000006 (0.000005)
 ```
 
-## Time complexity
+## Time complexity 📈
 
 The time complexity is calculated for each challenge, using the [Big O](https://en.wikipedia.org/wiki/Big_O_notation) notation. Common time complexities are:
 
