@@ -8,6 +8,14 @@ module HackerRank
       include ArrayUtils
       include HackerRank::Exceptions
 
+      def setup
+        ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] = "enabled"
+      end
+
+      def teardown
+        ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] = "enabled"
+      end
+
       protected
 
       def assert_raises_invalid_type(&block)
