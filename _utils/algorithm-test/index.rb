@@ -33,6 +33,24 @@ module HackerRank
       def assert_raises_array_out_of_constraints(&block)
         assert_raises(Exceptions::ArrayOutOfConstraintsException, &block)
       end
+
+      def assert_raises_incorrect_array_size(&block)
+        assert_raises Exceptions::IncorrectArraySizeException do
+          block.call
+        end
+      end
+
+      def assert_raises_arr_out_of_min_size(&block)
+        assert_raises Exceptions::ArrayOutOfMinSizeException do
+          block.call
+        end
+      end
+
+      def assert_raises_arr_out_of_max_size(&block)
+        assert_raises Exceptions::ArrayOutOfMaxSizeException do
+          block.call
+        end
+      end
     end
   end
 end
