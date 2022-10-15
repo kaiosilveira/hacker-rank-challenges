@@ -25,6 +25,7 @@ See below a list with all solved challenges:
 - [Divisible sum pairs](./divisible-sum-pairs/)
 - [Electronics shop](./divisible-sum-pairs/) (ft [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
 - [Left rotation](./left-rotation/)
+- [Library fine](./library-fine/)
 - [Mini max sum](./mini-max-sum/)
 - [Simple array sum](./simple-array-sum/)
 - [Sub array division](./sub-array-division/)
