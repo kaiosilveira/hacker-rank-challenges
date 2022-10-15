@@ -5,7 +5,7 @@ require_relative "../_utils/exceptions/exceptions.rb"
 
 module HackerRank
   module Algorithms
-    class AlgorithmTests < AlgorithmTest
+    class ChallengeAlgorithmTests < AlgorithmTest
       def test_applies_the_pattern_correctly
         assert_equal 1, 1
       end
