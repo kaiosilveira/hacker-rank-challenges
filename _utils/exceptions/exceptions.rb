@@ -36,5 +36,21 @@ module HackerRank
       end
     end
 
+    class InvalidInputTypeException < Exception
+      def initialize(input_name:, expected_type:)
+        super(
+          "'#{input_name}' does not have the correct type. Expected it to be #{expected_type}."
+        )
+      end
+    end
+
+    class InvalidInputFormatException < Exception
+      def initialize(input_name:, expected_format:)
+        super(
+          "'#{input_name}' was not in the correct format. Expected it to be like #{expected_format}."
+        )
+      end
+    end
+
   end
 end
