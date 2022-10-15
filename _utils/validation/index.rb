@@ -4,7 +4,7 @@ module HackerRank
   module Validation
     include HackerRank::Exceptions
 
-    def self.validate_constraint_within_range(constraint_name:, constraint_value:, range:)
+    def self.ensure_constraint_is_within_range(constraint_name:, constraint_value:, range:)
       min, max = range
       raise Exceptions::InputOutOfConstraintsException.new(
         input_name: constraint_name,
@@ -12,7 +12,7 @@ module HackerRank
       ) if constraint_value < min || constraint_value > max
     end
 
-    def self.validate_array(arr:, input_name:)
+    def self.ensure_is_array(arr:, input_name:)
       raise Exceptions::InvalidInputTypeException.new(
         input_name: input_name,
         expected_type: "array",
@@ -28,23 +28,23 @@ module HackerRank
       ) if value.size > max_size && constraint_enforcement_enabled
     end
 
-    def self.validate_array_length(arr:, input_name:, expected_format:)
+    def self.ensure_array_length(arr:, input_name:, expected_format:)
       raise Exceptions::InvalidInputFormatException.new(
         input_name: input_name,
         expected_format: expected_format,
       ) if arr.size != 3
     end
 
-    def self.validate_day_of_month(input_name:, value:)
-      validate_constraint_within_range(
+    def self.ensure_is_day_of_month(input_name:, value:)
+      ensure_constraint_is_within_range(
         constraint_name: input_name,
         constraint_value: value,
         range: [1, 31],
       )
     end
 
-    def self.validate_month_of_year(input_name:, value:)
-      validate_constraint_within_range(
+    def self.ensure_is_month_of_year(input_name:, value:)
+      ensure_constraint_is_within_range(
         constraint_name: input_name,
         constraint_value: value,
         range: [1, 12],
