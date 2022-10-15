@@ -21,6 +21,10 @@ module HackerRank
       def assert_raises_out_of_constraints(&block)
         assert_raises(Exceptions::InputOutOfConstraintsException, &block)
       end
+
+      def assert_raises_array_out_of_constraints(&block)
+        assert_raises(Exceptions::ArrayOutOfConstraintsException, &block)
+      end
     end
   end
 end

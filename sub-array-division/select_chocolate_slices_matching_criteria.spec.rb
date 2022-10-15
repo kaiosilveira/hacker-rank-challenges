@@ -46,7 +46,7 @@ module HackerRank
 
       def test_raises_an_exception_if_array_size_is_greater_than_100_and_ctt_v8n_enabled
         ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] = "enabled"
-        assert_raises ArrayOutOfConstraintsException do
+        assert_raises_array_out_of_constraints do
           Algorithms.select_chocolate_slices_matching_criteria(
             birth_day: 15,
             birth_month: 10,
