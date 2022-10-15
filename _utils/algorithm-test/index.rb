@@ -1,6 +1,11 @@
+require 'test/unit'
+require_relative '../array/array.rb'
+require_relative '../exceptions/exceptions.rb'
+
 module HackerRank
   module Algorithms
     class AlgorithmTest < Test::Unit::TestCase
+      include ArrayUtils
       include HackerRank::Exceptions
 
       protected
