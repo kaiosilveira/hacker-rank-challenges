@@ -20,12 +20,15 @@ Given an array of integers, find the longest sub-array where the absolute differ
 
 ## Test suite
 
-The test suite for this challenge covers the constraints described above and a happy path using the example's data. The tests are:
+The test suite for this challenge covers the constraints described above and a happy path using the example's data. The happy path test is:
 
-- `test_raises_an_exception_if_input_arr_size_is_lower_than_1`
-- `test_raises_an_exception_if_input_arr_size_is_greater_than_100_and_ctt_v8n_is_enabled`
-- `test_does_not_raise_an_exp_if_input_arr_size_is_greater_than_100_and_ctt_v8n_is_disabled`
-- `test_applies_the_pattern_correctly`
+```ruby
+def test_applies_the_pattern_correctly
+  assert_equal 5, Algorithms.find_longest_sub_array(input_arr: [1, 1, 2, 2, 4, 4, 5, 5, 5])
+  assert_equal 3, Algorithms.find_longest_sub_array(input_arr: [4, 6, 5, 3, 3, 1])
+  assert_equal 5, Algorithms.find_longest_sub_array(input_arr: [1, 2, 2, 3, 1, 2])
+end
+```
 
 For the full test suite, see [path_to_spec_file.spec.rb](./path_to_spec_file.rb).
 
@@ -135,7 +138,7 @@ Let's now take a look at this implementation and see how it stands from a perfor
 
 ### Code analysis 🕵🏽‍♂️
 
-Code analysis considerations
+See below the code commented line by line with the time complexity analysis for each line. Notice that we have one loop nested inside the other.
 
 ```ruby
 input_arr.each.with_index do |current_number, index| # n x block
@@ -150,7 +153,7 @@ input_arr.each.with_index do |current_number, index| # n x block
 end
 ```
 
-Which translates to the following expression:
+We can translate the analysis above to the following expression:
 
 $n.(O(1) + m.O(1) + O(1) + O(1))$
 
