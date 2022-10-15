@@ -52,5 +52,12 @@ module HackerRank
       end
     end
 
+    class ArrayOutOfConstraintsException < Exception
+      def initialize(input_name:, expected_max_size:, actual_size:)
+        super(
+          "'#{input_name}' was out of the defined constraints. Expected it to have a max size of #{expected_max_size}, but it had size #{actual_size}."
+        )
+      end
+    end
   end
 end
