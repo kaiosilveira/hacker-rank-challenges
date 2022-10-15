@@ -19,6 +19,15 @@ module HackerRank
       ) if !arr.kind_of?(Array)
     end
 
+    def self.ensure_max_array_size(input_name:, value:, max_size:)
+      constraint_enforcement_enabled = ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] == "enabled"
+      raise ArrayOutOfConstraintsException.new(
+        input_name: input_name,
+        expected_max_size: max_size,
+        actual_size: value.size
+      ) if value.size > max_size && constraint_enforcement_enabled
+    end
+
     def self.validate_array_length(arr:, input_name:, expected_format:)
       raise Exceptions::InvalidInputFormatException.new(
         input_name: input_name,
