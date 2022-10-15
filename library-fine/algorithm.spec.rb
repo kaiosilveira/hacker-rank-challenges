@@ -15,11 +15,11 @@ module HackerRank
       end
 
       def test_raises_exception_if_date_returned_does_not_contain_three_items
-        assert_raises_invalid_format &-> { run_with(expected_date: [5, 7, 2018], date_returned: [3]) }
+        assert_raises_incorrect_array_size &-> { run_with(expected_date: [5, 7, 2018], date_returned: [3]) }
       end
 
       def test_raises_exception_if_expected_date_does_not_contain_three_items
-        assert_raises_invalid_format &-> { run_with(expected_date: [3], date_returned: [5, 7, 2018]) }
+        assert_raises_incorrect_array_size &-> { run_with(expected_date: [3], date_returned: [5, 7, 2018]) }
       end
 
       def test_raises_exception_if_actual_return_day_is_lower_than_one

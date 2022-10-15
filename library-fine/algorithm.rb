@@ -49,11 +49,7 @@ module HackerRank
     end
 
     def self.validate_date_input_format(arr:, name:)
-      Validation.ensure_array_length(
-        arr: arr,
-        input_name: name,
-        expected_format: "[day, month, year]",
-      )
+      Validation.ensure_fixed_array_size(input_name: name, value: arr, size: 3)
     end
 
     def self.validate_year(input_name:, value:)
