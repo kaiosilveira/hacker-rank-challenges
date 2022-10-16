@@ -5,11 +5,12 @@ module HackerRank
     include HackerRank::Exceptions
 
     def self.ensure_constraint_is_within_range(constraint_name:, constraint_value:, range:)
+      constraint_enforcement_enabled = ENV["CONSTRAINT_ENFORCEMENT_ENABLED"] == "enabled"
       min, max = range
       raise Exceptions::InputOutOfConstraintsException.new(
         input_name: constraint_name,
         constraints: "#{min} <= #{constraint_name} <= #{max}",
-      ) if constraint_value < min || constraint_value > max
+      ) if constraint_value < min || (constraint_value > max && constraint_enforcement_enabled)
     end
 
     def self.ensure_is_array(arr:, input_name:)
