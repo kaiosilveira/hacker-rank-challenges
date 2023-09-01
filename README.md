@@ -1,16 +1,14 @@
 [![Continuous Integration](https://github.com/kaiosilveira/hacker-rank-challenges/actions/workflows/ruby.yml/badge.svg)](https://github.com/kaiosilveira/hacker-rank-challenges/actions/workflows/ruby.yml)
 
-# Hacker Rank Challenges
+# Problem solving
 
-This repository is an aggregator of my Hacker Rank challenge resolutions. Inside each solution you will find:
+This repository is an aggregator of my solutions to code challenges. Inside each solution you will find:
 
 - a main file for the challenge, which contains the samples and the challenge execution (`index.rb`)
 - the actual code resolution for the challenge (`challenge.rb`)
 - a test suite (`*.spec.rb`)
 - a benchmark of the results (`benchmarking.rb`)
 - a `README.md` file with a detailed explanation of the code implemented
-
-My Hacker Rank profile is: [@silveira_kaio](https://www.hackerrank.com/silveira_kaio).
 
 ## Solved challenges ✅
 
