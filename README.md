@@ -18,6 +18,7 @@ See below a list with all solved challenges:
 - [Beautiful days at the Movies](./beautiful-days/)
 - [Birthday cake candles](./birthday-cake-candles/)
 - [Cat and mouse](./cat-and-mouse/) (ft [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
+- [Circular array rotation](./circular-array-rotation/)
 - [Climbing the leader board](./climbing-the-leaderboard/)
 - [Design PDF Viewer](./designer-pdf-viewer/)
 - [Divisible sum pairs](./divisible-sum-pairs/)
