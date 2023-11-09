@@ -70,7 +70,7 @@ Let's now take a look at this implementation and see how it stands from a perfor
 
 ### Code analysis 🕵🏽‍♂️
 
-Code analysis considerations
+To perform a time complexity analysis of our code, we can scan it from top to bottom, writing the big $O$ notation for each line (the code was slightly modified to allow for individual line comments):
 
 ```ruby
 # some code here
