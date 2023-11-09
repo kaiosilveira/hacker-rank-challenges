@@ -36,7 +36,7 @@ See below a list with all solved challenges:
 
 ### Work in progress 🚧
 
-The following challenges are work in progress, they're probably missing documentation, proper benchmarking or some constraint validation tests:
+The following challenges are WIP, they're probably missing documentation, proper benchmarking or some constraint validation tests:
 
 - [Angry Professor](./angry-professor/)
 
