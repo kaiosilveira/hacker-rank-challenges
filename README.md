@@ -27,6 +27,7 @@ See below a list with all solved challenges:
 - [Library fine](./library-fine/)
 - [Mini max sum](./mini-max-sum/)
 - [Picking Numbers](./picking-numbers/)
+- [Repeated String](./repeated-string/)
 - [Simple array sum](./simple-array-sum/)
 - [Sub array division](./sub-array-division/)
 - [Staircase](./sub-array-division/)
@@ -37,7 +38,6 @@ See below a list with all solved challenges:
 
 The following challenges are work in progress, they're probably missing documentation, proper benchmarking or some constraint validation tests:
 
-- [Repeated String](./repeated-string/)
 - [Angry Professor](./angry-professor/)
 
 ## Programming language choice 👨🏽‍💻
