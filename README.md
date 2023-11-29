@@ -1,38 +1,14 @@
 [![Continuous Integration](https://github.com/kaiosilveira/hacker-rank-challenges/actions/workflows/ruby.yml/badge.svg)](https://github.com/kaiosilveira/hacker-rank-challenges/actions/workflows/ruby.yml)
 
-# Problem solving
+# Problem-solving
 
 This repository is an aggregator of my solutions to code challenges. Inside each solution you will find:
 
 - a main file for the challenge, which contains the samples and the challenge execution (`index.rb`)
-- the actual code resolution for the challenge (`challenge.rb`)
-- a test suite (`*.spec.rb`)
-- a benchmark of the results (`benchmarking.rb`)
+- the challenge wrapper, with constraint validations (`challenge.rb` + `challenge.spec.rb`)
+- the underlying algorithm used to solve the challenge (`algorithm.rb` + `algorithm.spec.rb`)
+- a benchmark of the results (`benchmarking.rb` + some CSVs with benchmark output)
 - a `README.md` file with a detailed explanation of the code implemented
-
-## Solved challenges ✅
-
-See below a list with all solved challenges:
-
-- [Bill division](./bill-division/)
-- [Beautiful days at the Movies](./beautiful-days/)
-- [Birthday cake candles](./birthday-cake-candles/)
-- [Cat and mouse](./cat-and-mouse/) (ft [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
-- [Circular array rotation](./circular-array-rotation/)
-- [Climbing the leader board](./climbing-the-leaderboard/)
-- [Design PDF Viewer](./designer-pdf-viewer/)
-- [Divisible sum pairs](./divisible-sum-pairs/)
-- [Electronics shop](./divisible-sum-pairs/) (ft [@Daniel-Silveira](https://github.com/Daniel-Silveira) and [@raulpesilva](https://github.com/raulpesilva))
-- [Left rotation](./left-rotation/)
-- [Library fine](./library-fine/)
-- [Mini max sum](./mini-max-sum/)
-- [Picking Numbers](./picking-numbers/)
-- [Repeated String](./repeated-string/)
-- [Simple array sum](./simple-array-sum/)
-- [Sub array division](./sub-array-division/)
-- [Staircase](./sub-array-division/)
-- [Utopian Tree](./utopian-tree/)
-- [Viral Advertising](./viral-advertising/)
 
 ### Work in progress 🚧
 
@@ -44,7 +20,7 @@ The following challenges are WIP, they're probably missing documentation, proper
 
 Because of its simplicity, elegance and API completeness, Ruby was the chosen programming language to implement the code for the challenges.
 
-### Available tasks
+### Available tasks ⚙️
 
 - `rake test`: run all unit tests from all files
 - `rake create_challenge'[challenge_name]'`: create a new directory with the default structure for a challenge
