@@ -11,3 +11,4 @@ gem 'm'
 gem 'rake'
 gem 'test-unit'
 gem 'retest'
+gem 'rubocop', require: false
