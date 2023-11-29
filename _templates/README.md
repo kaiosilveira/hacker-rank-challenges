@@ -19,12 +19,7 @@ Challenge description goes here
 
 ## Test suite 🧪
 
-The test suite for this challenge covers the constraints described above and a happy path using the example's data. The tests are:
-
-- `test_raises_ex`
-- `test_happy_path`
-
-For the full test suite, see [algorithm.spec.rb](./algorithm.spec.rb).
+The test suite for this challenge covers the constraints described above and a happy path using the example's data. For the full test suite, see [challenge.spec.rb](./challenge.spec.rb) and [algorithm.spec.rb](./algorithm.spec.rb).
 
 ## Algorithm resolution description 📄
 
