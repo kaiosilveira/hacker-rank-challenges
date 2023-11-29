@@ -10,12 +10,6 @@ This repository is an aggregator of my solutions to code challenges. Inside each
 - a benchmark of the results (`benchmarking.rb` + some CSVs with benchmark output)
 - a `README.md` file with a detailed explanation of the code implemented
 
-### Work in progress 🚧
-
-The following challenges are WIP, they're probably missing documentation, proper benchmarking or some constraint validation tests:
-
-- [Angry Professor](./angry-professor/)
-
 ## Programming language choice 👨🏽‍💻
 
 Because of its simplicity, elegance and API completeness, Ruby was the chosen programming language to implement the code for the challenges.
