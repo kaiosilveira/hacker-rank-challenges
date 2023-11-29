@@ -19,16 +19,25 @@ A Discrete Mathematics professor has a class of students. Frustrated with their 
 
 ## Test suite 🧪
 
-The test suite for this challenge covers the constraints described above and a happy path using the example's data. The tests are:
-
-- `test_raises_ex`
-- `test_happy_path`
-
-For the full test suite, see [algorithm.spec.rb](./algorithm.spec.rb).
+The test suite for this challenge covers the constraints described above and a happy path using the example's data. For the full test suite, see [challenge.spec.rb](./challenge.spec.rb) and [algorithm.spec.rb](./algorithm.spec.rb).
 
 ## Algorithm resolution description 📄
 
-Algorithm resolution description
+To solve this challenge, we need to count how many on-time arrivals the class had and check whether or not it is below the accepted threshold.
+
+To compute the on-time arrivals, we can iterate over each arrival time and find all items with time <= 0, since a positive time means "minutes late". This, converted to code, looks like:
+
+```ruby
+on_time_arrivals = arrival_times.count { |time| time <= 0 }
+```
+
+Then, we just need to check whether or not it exceeds the professor's threshold:
+
+```ruby
+on_time_arrivals < threshold
+```
+
+The final implementation looks like this:
 
 ```ruby
 def self.was_class_canceled?(arrival_times:, threshold:)
@@ -75,32 +84,37 @@ Success! ✅
   0.000004   0.000003   0.000007 (  0.000007)
 ```
 
-A good indicative that the solution looks reasonable.
+A good indication that the solution looks reasonable.
 
 ## Implementation benchmarking & time complexity analysis 📈
 
-Let's now take a look at this implementation and see how it stands from a performance point of view. Below, we have a code analysis and a benchmarking of the solution.
+Let's now take a look at this implementation and see how it stands from a performance point of view. Below, we have a time complexity analysis and a benchmarking of the solution.
 
-### Code analysis 🕵🏽‍♂️
+### Time complexity analysis 🕵🏽‍♂️
 
-Code analysis considerations
+To perform a time complexity analysis of our code, we can scan it from top to bottom, writing the big $O$ notation for each line (the code was slightly modified to allow for individual line comments). Being `n` the size of our `arrival_times` array, we have:
 
 ```ruby
 def self.was_class_canceled?(arrival_times:, threshold:)
-  on_time_arrivals = arrival_times.count { |time| time <= 0 }
-  on_time_arrivals < threshold
+  on_time_arrivals = arrival_times.count do |time| # O(n)
+    time <= 0 # O(1)
+  end
+
+  on_time_arrivals < threshold # O(1)
 end
 ```
 
 Which translates to the following expression:
 
-[expression breakdown]
+$T \propto O(n).O(1) + O(1) \implies T \propto O(n) + O(1)$, which, ignoring the $O(1)$ constant, gives us:
 
-Which means **CONSTANT|LINEAR|QUADRATIC** time complexity.
+$T \propto O(n)$
+
+This means a **linear** time complexity, which is expected since the only varying term here is the size of our `arrival_times` array.
 
 ### Benchmarking 📊
 
-To get a visual feeling of how the function behaves as $n$ increases, a benchmark was run from **BENCHMARK_N_ZERO** up to **BENCHMARK_N_MAX**, resulting in the following chart:
+To get a visual feeling of how the function behaves as $n$ increases, a benchmark was run from $n = 1$ up to $n = 10000$, resulting in the following chart:
 
 ```console
 ➜ cat ./angry-professor/results.csv | uplot line -d, -w 50 -h 15 -t Results --canvas ascii --xlabel n --ylabel "T(n)"
@@ -126,6 +140,6 @@ To get a visual feeling of how the function behaves as $n$ increases, a benchmar
                                      n
 ```
 
-Which, ignoring eventual CPU fluctuations, matches the given time complexity pattern theoretically demonstrated by the code analysis above.
+Which, ignoring eventual CPU fluctuations, matches the given time complexity pattern theoretically demonstrated by the time-complexity analysis above.
 
 For the full benchmarking code, see [benchmarking.rb](./benchmarking.rb).
