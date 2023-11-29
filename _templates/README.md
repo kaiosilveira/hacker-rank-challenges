@@ -62,13 +62,13 @@ Gives the following output:
 challenge output
 ```
 
-A good indicative that the solution looks reasonable.
+A good indication that the solution looks reasonable.
 
 ## Implementation benchmarking & time complexity analysis 📈
 
 Let's now take a look at this implementation and see how it stands from a performance point of view. Below, we have a code analysis and a benchmarking of the solution.
 
-### Code analysis 🕵🏽‍♂️
+### Time complexity 🕵🏽‍♂️
 
 To perform a time complexity analysis of our code, we can scan it from top to bottom, writing the big $O$ notation for each line (the code was slightly modified to allow for individual line comments):
 
