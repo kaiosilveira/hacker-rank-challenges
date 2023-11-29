@@ -14,8 +14,8 @@ A Discrete Mathematics professor has a class of students. Frustrated with their 
 
 **Constraints**
 
-- $1 \leq n \leq 100 $
-- $1 \leq m \leq 100 $
+- $1 \leq n \leq 1000 $
+- $1 \leq k \leq 1000 $
 
 ## Test suite 🧪
 
