@@ -8,6 +8,8 @@ samples = [
 ]
 
 HackerRank::Runner.new(samples).run do |*params|
-  student_times, threshold = params
-  HackerRank::Challenges.angry_professor(student_times, threshold)
+  arrival_times, threshold = params
+  HackerRank::Challenges::AngryProfessor.was_class_canceled?(
+    arrival_times: arrival_times, threshold: threshold
+  )
 end
