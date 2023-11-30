@@ -14,5 +14,5 @@ samples = [
 
 HackerRank::Runner.new(samples).run do |*params|
   input, cases = params
-  HackerRank::Challenges.service_lane(input:, cases:)
+  HackerRank::Challenges.service_lane(input: input, cases: cases)
 end
