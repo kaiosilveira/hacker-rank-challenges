@@ -11,7 +11,7 @@ module HackerRank
     YEARLY_FEE = 10_000
 
     def self.calculate_library_fine(expected_date:, date_returned:)
-      validate_inputs(date_returned, expected_date)
+      validate_library_fine_inputs(date_returned, expected_date)
 
       actual_day, actual_month, actual_year = date_returned
       expected_day, expected_month, expected_year = expected_date
@@ -28,7 +28,7 @@ module HackerRank
 
     private
 
-    def self.validate_inputs(actual_return_date, expected_return_date)
+    def self.validate_library_fine_inputs(actual_return_date, expected_return_date)
       Validation.ensure_is_array(arr: actual_return_date, input_name: "actual_return_date")
       Validation.ensure_is_array(arr: expected_return_date, input_name: "expected_return_date")
 
