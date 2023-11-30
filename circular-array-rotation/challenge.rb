@@ -6,13 +6,15 @@ module HackerRank
     include HackerRank::Validation
 
     def self.circular_array_rotation(input:, number_of_rotations:, queries:)
-      validate_inputs(input, number_of_rotations, queries)
+      validate_circular_array_rotation_inputs(input, number_of_rotations, queries)
 
       rotated = Algorithms.circularly_rotate_array(input: input, rotations: number_of_rotations)
       queries.map { |query| rotated[query] }
     end
 
-    def self.validate_inputs(arr, number_of_rotations, queries)
+    private
+
+    def self.validate_circular_array_rotation_inputs(arr, number_of_rotations, queries)
       Validation.ensure_is_array(arr: arr, input_name: "input")
       Validation.ensure_array_constraints(input_name: 'input', value: arr, constraints: [1, 10**5])
 
